@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Network, Link2, Share2, MousePointerClick } from "lucide-react";
+import { Link2, Share2, MousePointerClick } from "lucide-react";
 
 const OmnichannelStrategy = () => {
   return (

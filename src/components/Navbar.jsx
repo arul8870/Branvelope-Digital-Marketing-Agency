@@ -32,7 +32,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <Hexagon className="text-brand-500 w-8 h-8 group-hover:text-accent-cyan transition-colors" />
           <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-gradient transition-all">
             Branvelope

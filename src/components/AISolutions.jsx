@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BrainCircuit, LineChart, Network } from "lucide-react";
+import { BrainCircuit, Network } from "lucide-react";
 
 const AISolutions = () => {
   return (

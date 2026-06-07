@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Database, Activity, Layers, AppWindow, Cpu, Key } from "lucide-react";
+import { Database, Activity, Layers, AppWindow, Cpu } from "lucide-react";
 
 const TechStack = () => {
   const stackItems = [
