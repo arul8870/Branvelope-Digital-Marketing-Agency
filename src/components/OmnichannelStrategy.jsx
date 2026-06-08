@@ -1,74 +1,123 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link2, Share2, MousePointerClick } from "lucide-react";
+import { MousePointerClick, Link2, Share2 } from "lucide-react";
+
+const cards = [
+  {
+    title: "Paid Acquisition",
+    desc: "Immediate traffic injection to test offers and capture high-intent bottom-of-funnel demand at scale.",
+    icon: MousePointerClick,
+    accent: "white",
+    elevated: false,
+  },
+  {
+    title: "Organic Search",
+    desc: "Building long-term, compounding asset value through technical architecture and topical authority.",
+    icon: Link2,
+    accent: "gold",
+    elevated: true,
+  },
+  {
+    title: "Social Nurturing",
+    desc: "Transforming cold traffic into loyal brand advocates through strategic retargeting and community.",
+    icon: Share2,
+    accent: "white",
+    elevated: false,
+  },
+];
+
+const cardVariants = {
+  hidden: (i) => ({
+    opacity: 0,
+    y: 40,
+    scale: 0.95,
+  }),
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      delay: i * 0.15,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
 
 const OmnichannelStrategy = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-dark-bg">
-      <div className="absolute inset-0 bg-dark-bg/95 mix-blend-multiply" />
+    <section className="py-32 relative overflow-hidden bg-black">
+      <div className="grain absolute inset-0 pointer-events-none" />
+      <div className="absolute inset-0 mesh-dark pointer-events-none" />
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-dashed border-gold/10 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-2xl mx-auto mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            Unified <span className="text-gradient">Omnichannel</span> Synergy
+          <span className="text-xs font-semibold tracking-widest uppercase text-gold mb-4 block">
+            Omnichannel
+          </span>
+          <h2 className="text-5xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Unified
+            <br />
+            <span className="text-gradient-gold">Ecosystem</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light leading-relaxed">
-            Siloed marketing is dead. We engineer ecosystems where Paid Media, SEO, and Content work in perfect harmony, creating a compounding growth effect that dramatically lowers overall acquisition costs.
+          <p className="text-white/40 text-base font-light leading-relaxed">
+            Siloed marketing is dead. We engineer ecosystems where Paid Media,
+            SEO, and Social work in perfect harmony, creating a compounding
+            growth effect.
           </p>
         </motion.div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Abstract connecting lines background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[500px] border border-white/5 rounded-full animate-[spin_40s_linear_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[300px] border border-white/5 rounded-full animate-[spin_30s_linear_infinite_reverse]" />
+        <div className="relative max-w-5xl mx-auto">
+          <div className="hidden md:block absolute top-1/2 left-[20%] right-[20%] h-px bg-gold/20 -translate-y-1/2 z-0" />
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="glass p-8 rounded-2xl text-center relative z-10 bg-dark-bg/80 backdrop-blur-md"
-            >
-              <div className="w-14 h-14 mx-auto rounded-full bg-brand-500/20 flex items-center justify-center mb-6 border border-brand-500/30">
-                <MousePointerClick className="w-6 h-6 text-brand-400" />
-              </div>
-              <h3 className="text-xl font-display font-semibold text-white mb-3">Paid Acquisition</h3>
-              <p className="text-gray-400 text-sm font-light">Immediate traffic injection to test offers and capture high-intent bottom-of-funnel demand.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass p-8 rounded-2xl text-center relative z-10 bg-dark-bg/80 backdrop-blur-md mt-0 md:mt-12"
-            >
-              <div className="w-14 h-14 mx-auto rounded-full bg-accent-cyan/20 flex items-center justify-center mb-6 border border-accent-cyan/30">
-                <Link2 className="w-6 h-6 text-accent-cyan" />
-              </div>
-              <h3 className="text-xl font-display font-semibold text-white mb-3">Organic Search</h3>
-              <p className="text-gray-400 text-sm font-light">Building long-term, compounding asset value through technical architecture and authority.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="glass p-8 rounded-2xl text-center relative z-10 bg-dark-bg/80 backdrop-blur-md"
-            >
-              <div className="w-14 h-14 mx-auto rounded-full bg-accent-blue/20 flex items-center justify-center mb-6 border border-accent-blue/30">
-                <Share2 className="w-6 h-6 text-accent-blue" />
-              </div>
-              <h3 className="text-xl font-display font-semibold text-white mb-3">Social Nurturing</h3>
-              <p className="text-gray-400 text-sm font-light">Transforming cold traffic into loyal brand advocates through strategic retargeting and community.</p>
-            </motion.div>
+          <div className="grid md:grid-cols-3 gap-6 items-start">
+            {cards.map((card, i) => {
+              const Icon = card.icon;
+              const isGold = card.accent === "gold";
+              return (
+                <motion.div
+                  key={card.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={cardVariants}
+                  className={`relative z-10 p-8 rounded-2xl ${
+                    card.elevated
+                      ? "glass-gold glow-gold md:-mt-5 border border-gold/30"
+                      : "glass-dark border border-white/[0.08]"
+                  } border-t-2 ${
+                    isGold ? "border-t-gold" : "border-t-white/20"
+                  } transition-all duration-500 hover:-translate-y-2`}
+                >
+                  <div
+                    className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
+                      isGold
+                        ? "bg-gold/15 border border-gold/30"
+                        : "bg-white/10 border border-white/15"
+                    }`}
+                  >
+                    <Icon
+                      className={`w-6 h-6 ${isGold ? "text-gold" : "text-white/70"}`}
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    {card.title}
+                  </h3>
+                  <p className="text-white/40 text-sm font-light leading-relaxed">
+                    {card.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
